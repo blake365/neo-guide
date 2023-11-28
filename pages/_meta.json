@@ -1,15 +1,16 @@
 {
-  "index": "Introduction",
+  "index": "Home",
   "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
-  "contact": {
-    "title": "Contact ↗",
+  "Getting-Started": "Getting Started",
+  "Information": "Information",
+  "Using-Turns": "Use Turns",
+  "Finance": "Finance",
+  "Diplomacy": "Diplomacy",
+  "Settings": "Settings",
+  "return to game":{
+    "title": "Return to Game ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://www.neopromisance.com",
     "newWindow": true
   }
 }
