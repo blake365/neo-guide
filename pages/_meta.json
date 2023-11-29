@@ -1,12 +1,12 @@
 {
   "index": "Home",
-  "another": "Another Page",
   "Getting-Started": "Getting Started",
   "Information": "Information",
   "Using-Turns": "Use Turns",
   "Finance": "Finance",
   "Diplomacy": "Diplomacy",
-  "Settings": "Settings",
+  "settings": "Settings",
+  "history": "History",
   "return to game":{
     "title": "Return to Game ↗",
     "type": "page",
