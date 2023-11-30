@@ -1,7 +1,5 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
-import { useConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
 	logo: (
@@ -37,7 +35,7 @@ const config: DocsThemeConfig = {
 	},
 	docsRepositoryBase: 'https://github.com/blake365/neo-guide/tree/main/',
 	footer: {
-		text: 'NeoPromisance - 2023',
+		text: 'NeoPromisance',
 	},
 	toc: {
 		backToTop: true,
