@@ -46,6 +46,9 @@ const config: DocsThemeConfig = {
 	footer: {
 		text: 'NeoPromisance',
 	},
+	toc: {
+		backToTop: true,
+	},
 }
 
 export default config
