@@ -9,7 +9,7 @@
   "settings": "Settings",
   "history": "History",
   "return to game":{
-    "title": "Return to Game ↗",
+    "title": "Go to Game ↗",
     "type": "page",
     "href": "https://www.neopromisance.com",
     "newWindow": true
