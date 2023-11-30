@@ -1,7 +1,16 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
+	useNextSeoProps() {
+		const { asPath } = useRouter()
+		if (asPath !== '/') {
+			return {
+				titleTemplate: '%s - NeoPromisance Guide',
+			}
+		}
+	},
 	logo: (
 		<>
 			<svg
@@ -36,9 +45,6 @@ const config: DocsThemeConfig = {
 	docsRepositoryBase: 'https://github.com/blake365/neo-guide/tree/main/',
 	footer: {
 		text: 'NeoPromisance',
-	},
-	toc: {
-		backToTop: true,
 	},
 }
 
