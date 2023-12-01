@@ -8,10 +8,19 @@ const config: DocsThemeConfig = {
 		if (asPath !== '/') {
 			return {
 				titleTemplate: '%s - NeoPromisance Guide',
-				description: 'A guide to NeoPromisance - Modern Promisance Game',
 			}
 		}
 	},
+	head: (
+		<>
+			<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+			<meta property='og:title' content='NeoPromisance Guide' />
+			<meta
+				property='og:description'
+				content='The guide to NeoPromisance - Modern Promisance Game'
+			/>
+		</>
+	),
 	logo: (
 		<>
 			<svg
