@@ -8,6 +8,7 @@ const config: DocsThemeConfig = {
 		if (asPath !== '/') {
 			return {
 				titleTemplate: '%s - NeoPromisance Guide',
+				description: 'A guide to NeoPromisance - Modern Promisance Game',
 			}
 		}
 	},
@@ -44,7 +45,7 @@ const config: DocsThemeConfig = {
 	},
 	docsRepositoryBase: 'https://github.com/blake365/neo-guide/tree/main/',
 	footer: {
-		text: 'NeoPromisance',
+		text: 'NeoPromisance 2023',
 	},
 	toc: {
 		backToTop: true,
