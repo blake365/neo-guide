@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://guide.neopromisance.com
+
+# Sitemaps
+Sitemap: https://guide.neopromisance.com/sitemap.xml
