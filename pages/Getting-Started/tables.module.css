@@ -1,0 +1,13 @@
+.guideTable {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.guideTable th {
+    padding: 0 1rem
+}
+
+.guideTable td {
+    text-align: center;
+}

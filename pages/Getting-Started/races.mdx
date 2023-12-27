@@ -1,3 +1,6 @@
+import { raceArray } from '../../config/races.ts'
+import classes from './tables.module.css'
+
 ## Races
 
 There are many different races in the world, each with their own distinct advantages and disadvantages in the following areas:
@@ -17,21 +20,119 @@ There are many different races in the world, each with their own distinct advant
 
 _Scroll left and right to see more attributes_
 
-| Race     | Offense | Defense | Building | Upkeep\* | Magic | Industry | Economy | Exploration | Market\* | Consumption\* | Energy | Agriculture |
-| -------- | ------- | ------- | -------- | -------- | ----- | -------- | ------- | ----------- | -------- | ------------- | ------ | ----------- |
-| Human    | 0%      | 0%      | 0%       | 0%       | 0%    | 0%       | 0%      | 0%          | 0%       | 0%            | 0%     | 0%          |
-| Elf      | -14%    | -2%     | -10%     | 0%       | 18%   | -12%     | 2%      | 12%         | 0%       | 0%            | 12%    | -6%         |
-| Dwarf    | 6%      | 16%     | 16%      | -8%      | -16%  | 12%      | 0%      | -18%        | -8%      | 0%            | 0%     | 0%          |
-| Troll    | 24%     | -10%    | 8%       | 0%       | -12%  | 0%       | 4%      | 14%         | -12%     | 0%            | -8%    | -8%         |
-| Gnome    | -16%    | 10%     | 0%       | 6%       | 0%    | -10%     | 10%     | -12%        | 24%      | 0%            | -12%   | 0%          |
-| Gremlin  | 10%     | 6%      | 0%       | 0%       | -10%  | -14%     | -20%    | 0%          | 8%       | 14%           | 0%     | 18%         |
-| Orc      | 16%     | 0%      | 4%       | -14%     | -4%   | 8%       | 0%      | 22%         | 0%       | -10%          | -14%   | -8%         |
-| Drow     | 14%     | 6%      | -12%     | -10%     | 18%   | 0%       | 0%      | -16%        | 0%       | 0%            | 6%     | -6%         |
-| Goblin   | -18%    | -16%    | 0%       | 18%      | 0%    | 14%      | 0%      | 0%          | -6%      | 8%            | 0%     | 0%          |
-| Hobbit   | -6%     | 10%     | -6%      | 6%       | 0%    | -8%      | -4%     | -8%         | 8%       | -8%           | 0%     | 16%         |
-| Ghoul    | 0%      | 8%      | -8%      | 10%      | -12%  | 10%      | 0%      | -6%         | -8%      | 4%            | -6%    | 8%          |
-| Minotaur | 18%     | 12%     | -4%      | -14%     | -16%  | 6%       | 14%     | 12%         | -11%     | -12%          | -10%   | 5%          |
-| Vampire  | 12%     | -8%     | -4%      | 11%      | 0%    | 12%      | 9%      | -16%        | -4%      | -10%          | 0%     | -2%         |
-| Pixie    | -18%    | -12%    | -10%     | 6%       | 14%   | -18%     | 10%     | 0%          | 10%      | 16%           | 12%    | -10%        |
+<div className={classes.guideTable}>
+	<table>
+		<thead>
+			<tr>
+				<th>Race</th>
+				<th>Offense</th>
+				<th>Defense</th>
+				<th>Building</th>
+				<th>Upkeep*</th>
+				<th>Magic</th>
+				<th>Industry</th>
+				<th>Economy</th>
+				<th>Exploration</th>
+				<th>Market*</th>
+				<th>Consumption*</th>
+				<th>Energy</th>
+				<th>Agriculture</th>
+			</tr>
+		</thead>
+		<tbody>
+			{raceArray.map((race, index) => {
+				return (
+					<tr key={index}>
+						<td>{race.name}</td>
+						<td
+							style={
+								race.mod_offense >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_offense}%
+						</td>
+						<td
+							style={
+								race.mod_defense >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_defense}%
+						</td>
+						<td
+							style={
+								race.mod_buildrate >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_buildrate}%
+						</td>
+						<td
+							style={
+								race.mod_expenses >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_expenses}%
+						</td>
+						<td
+							style={
+								race.mod_magic >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_magic}%
+						</td>
+						<td
+							style={
+								race.mod_industry >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_industry}%
+						</td>
+						<td
+							style={
+								race.mod_income >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_income}%
+						</td>
+						<td
+							style={
+								race.mod_explore >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_explore}%
+						</td>
+						<td
+							style={
+								race.mod_market >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_market}%
+						</td>
+						<td
+							style={
+								race.mod_foodcon >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_foodcon}%
+						</td>
+						<td
+							style={
+								race.mod_runepro >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_runepro}%
+						</td>
+						<td
+							style={
+								race.mod_foodpro >= 0 ? { color: 'green' } : { color: 'red' }
+							}
+						>
+							{race.mod_foodpro}%
+						</td>
+					</tr>
+				)
+			})}
+		</tbody>
+	</table>
+</div>
 
 For all of the above values, a positive percentage works to your empire's advantage while a negative percentage acts as a penalty. For attributes noted with a "*", this may seem backwards - for example, a food consumption penalty (negative) will *increase* how much food your units require, while an upkeep bonus (positive) will *decrease\* your expenses.

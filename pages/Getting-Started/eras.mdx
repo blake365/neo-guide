@@ -1,3 +1,6 @@
+import { eraArray } from '../../config/eras.ts'
+import classes from './tables.module.css'
+
 ## Eras
 
 Empires in this world exist in 3 different time periods. Interacting directly with an empire in another era requires an open Time Gate.
@@ -8,17 +11,45 @@ The offensive and defensive power of [military units](/Getting-Started/military-
 - **Food Production**: Affects how productive your farms are.
 - **Industry**: Affects your ability to produce military units.
 - **Energy**: The rate at which your wizards produce mana.
-- **Exploration**: How much land you gain per turn spent [exploring](/explore).
+- **Exploration**: How much land you gain per turn spent [exploring](/Using-Turns/explore).
 
-| Era     | Economy | Food Production | Industry | Energy | Exploration |
-| ------- | ------- | --------------- | -------- | ------ | ----------- |
-| Past    | -5%     | -5%             | -10%     | 20%    | 0%          |
-| Present | 0%      | 15%             | 5%       | 0%     | 20%         |
-| Future  | 15%     | -5%             | 15%      | -20%   | 40%         |
+<div className={classes.guideTable}>
+    <table>
+        <thead>
+            <tr>
+                <th>Era</th>
+                <th>Economy</th>
+                <th>Food Production</th>
+                <th>Industry</th>
+                <th>Energy</th>
+                <th>Exploration</th>
+            </tr>
+        </thead>
+        <tbody>
+            {eraArray.map(era =>
+            {
+                return (
+                    <tr key={era.name}>
+                        <td>{era.name}</td>
+
+                        <td style={era.mod_cashpro >= 0 ? { color: 'green' } : { color: 'red' }}>{era.mod_cashpro}%</td>
+                        <td style={era.mod_foodpro >= 0 ? { color: 'green' } : { color: 'red' }}>{era.mod_foodpro}%</td>
+                        <td style={era.mod_industry >= 0 ? { color: 'green' } : { color: 'red' }}>{era.mod_industry}%</td>
+
+                        <td style={era.mod_runepro >= 0 ? { color: 'green' } : { color: 'red' }}>{era.mod_runepro}%</td>
+
+                        <td style={era.mod_explore >= 0 ? { color: 'green' } : { color: 'red' }}>{era.mod_explore}%</td>
+                    </tr>
+                )
+            })}
+        </tbody>
+    </table>
+
+</div>
 
 ## Time Gates
 
-Time Gates are the only way to interact with empires in other eras. They are opened by wizards in the [magic center](/magic-center) and require a large amount of mana to maintain. Time Gates can be opened or closed at any time, but the process takes 2 turns.
+Time Gates are the only way to interact with empires in other eras. They are opened by wizards in the [magic center](/Using-Turns/magic-center) and require a large amount of mana to maintain. Time Gates can be opened or closed at any time, but the process takes 2 turns.
 
 ## Era Differences
 
